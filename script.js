@@ -120,7 +120,7 @@ function countMoves() {
   
     if (move !== null) {
         move.innerHTML = move.innerHTML - 1;
-        if (moves == 15) {
+        if (moves == 17) {
             toggleModal();
             setTimeout(() => {
                 refresh.click();
@@ -152,5 +152,5 @@ if (move !== null) {
         setTimeout(() => {
             window.location.reload();
         }, 2000);
-     }, 40000);
+     }, 30000);
  }
