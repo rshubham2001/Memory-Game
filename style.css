@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(50, 119, 248);
+    display: flex;
+}
+.board{
+    height: 480px;
+    width: 460px;
+    background-color: aliceblue;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    border-radius: 10px;
+    box-shadow: -3px 5px 5px 3px rgba(0, 0, 0, 0.363);
+}
+.shake {
+    animation: shaking 0.35s ease-in-out;
+}
+
+@keyframes shaking {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.card {
+    height: 100px;
+    width: 91px;
+    background-color: rgb(50, 119, 248, 0.651);
+    border-radius: 10px;
+    margin: 0px 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    box-shadow: -3px 5px 5px 3px rgba(0, 0, 0, 0.363);
+    cursor: pointer;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card .front {
+    color: aliceblue;
+    background-color:rgba(50, 119, 248, 0.651);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 18px;
+}
+
+.btn {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 30px;
+    width: 250px;
+    height: 70px;
+    font-size: 1.6rem;
+    left: calc(50% - 125px);
+    box-shadow: -3px 5px 5px 3px rgba(0, 0, 0, 0.363);
+}
+#refresh, 
+#level1{
+width: 120px;
+height: 50px;
+border:1px solid rgb(50, 119, 248);
+border-radius: 10px;
+margin: 0px 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: rgba(50, 119, 248, 0.651);
+font-size: 1.4rem;
+font-weight: 600;
+cursor: pointer;
+}
+#refresh:hover, 
+#level1:hover{
+    color: aliceblue;
+    background-color: rgba(50, 119, 248, 0.651);
+}
+
+.modal2 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button2 {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
