@@ -106,7 +106,7 @@ closeButton2.addEventListener("click", toggleModal2);
 const msg = document.getElementById("msg");
 function showWin() {
     if (count == (cards.length) / 2) {
-        msg.innerHTML = msg.innerHTML + `${moves}`;
+        msg.innerHTML = msg.innerHTML + `${moves}` + " moves";
         toggleModal2();
         setTimeout(() => {
             refresh.click();
